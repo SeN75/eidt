@@ -1,0 +1,19 @@
+footer {
+  background: red;
+  padding: 20px;
+}
+
+body {
+  height: auto;
+}
+a{
+    text-align: center;
+}
+p{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    
+}
+ul{text-align: center}
+li{display: inline-block;margin: 10px}
