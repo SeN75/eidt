@@ -20,6 +20,13 @@ namespace MD
 
         static void Main(string[] args)
         {
+            string u = Console.ReadLine();
+            string p = Console.ReadLine();
+            string t = Console.ReadLine();
+            string s= Console.ReadLine();
+            string m = Console.ReadLine();
+            string h = Console.ReadLine();
+       
             
         }
         public void Tashfer()
@@ -36,29 +43,15 @@ namespace MD
             
         class SendMail
         {
-            private string From { get; set; }
-            private  string PassWord { get; set; }
-            private string TO { get; set; }
-            private string Sub { get; set; }
-            private string Massege { get; set; }
-            private int Port { get; set; }
-            private string Host { get; set; }
-            private bool Ssl { get; set; }
-
-            public SendMail(string umail, string password, string der,string sub,string massege ,int port , string host , bool ssl)
-            {
-                this.From = umail;
-                this.PassWord = password;
-                this.TO = der;
-                this.Sub = sub;
-                this.Massege = massege;
-                this.Port = port;
-                this.Host = host;
-                    
-            }
-            public void MailTest()
-            {
-                MailMessage msg = new MailMessage(From, TO, Sub,Massege);
+            static string From { get; set; }
+            static string PassWord { get; set; }
+            static int Port { get; set; }
+            static string Host { get; set; }
+            static bool Ssl { get; set; }
+            
+           static void MailTest(string To, string Sub, string Massege)
+        {
+                MailMessage msg = new MailMessage(From, To, Sub,Massege);
                 msg.IsBodyHtml = true;
                 SmtpClient sn = new SmtpClient(Host,Port );
                 sn.UseDefaultCredentials = false;
