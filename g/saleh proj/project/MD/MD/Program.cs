@@ -43,8 +43,9 @@ namespace MD
             private string Massege { get; set; }
             private int Port { get; set; }
             private string Host { get; set; }
+            private bool Ssl { get; set; }
 
-            public SendMail(string umail, string password, string der,string sub,string massege ,int port , string host)
+            public SendMail(string umail, string password, string der,string sub,string massege ,int port , string host , bool ssl)
             {
                 this.From = umail;
                 this.PassWord = password;
@@ -62,7 +63,7 @@ namespace MD
                 SmtpClient sn = new SmtpClient(Host,Port );
                 sn.UseDefaultCredentials = false;
                 NetworkCredential UserAccount = new NetworkCredential(From, PassWord);
-                sn.EnableSsl = true;
+                sn.EnableSsl = Ssl;
                 sn.Credentials = UserAccount;
                 sn.Send(msg);
             }
