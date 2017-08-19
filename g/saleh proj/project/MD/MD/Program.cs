@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Net.Mail;
+using System.Net;
 
 
 namespace MD
 {
     class Program
     {
+       
         // Tash1 is Text encryption
         public string Tash1;
         // the result
@@ -29,5 +32,43 @@ namespace MD
             TashR = t;
 
         }
+      
+            
+        class SendMail
+        {
+            private string From { get; set; }
+            private  string PassWord { get; set; }
+            private string TO { get; set; }
+            private string Sub { get; set; }
+            private string Massege { get; set; }
+            private int Port { get; set; }
+            private string Host { get; set; }
+
+            public SendMail(string umail, string password, string der,string sub,string massege ,int port , string host)
+            {
+                this.From = umail;
+                this.PassWord = password;
+                this.TO = der;
+                this.Sub = sub;
+                this.Massege = massege;
+                this.Port = port;
+                this.Host = host;
+                    
+            }
+            public void MailTest()
+            {
+                MailMessage msg = new MailMessage(From, TO, Sub,Massege);
+                msg.IsBodyHtml = true;
+                SmtpClient sn = new SmtpClient(Host,Port );
+                sn.UseDefaultCredentials = false;
+                NetworkCredential UserAccount = new NetworkCredential(From, PassWord);
+                sn.EnableSsl = true;
+                sn.Credentials = UserAccount;
+                sn.Send(msg);
+            }
+            
+            }
+
+        
     }
 }
