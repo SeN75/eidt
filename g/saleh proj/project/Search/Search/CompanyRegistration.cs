@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MD
+namespace Search
 {
-   
-    
+    class CompanyRegistration
+    {
+        public string CommercialRecord{ get; set; }
+    }
 }

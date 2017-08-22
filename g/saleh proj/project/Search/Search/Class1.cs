@@ -8,14 +8,22 @@ namespace Search
 {
     class Search
     {
+        
+        [Required]
+        public string PickingUpLocations { get; set; }
+        [Required]
+        public string PickingUpDate { get; set; }
+        [Required]
+        public string PickingUpTime{ get; set; }
+        [Required]
+        public string DropingUpLocations { get; set; }
+        [Required]
+        public string DropingUpDate { get; set; }
         [Required]
         public string TypeOfCar { get; set; }
         [Required]
-        public string  ReceivedDate { get; set; }
-        [Required]
-        public string DeliveryDate { get; set; }
-        [Required]
-        public string  City { get; set; }    
-        
+        public bool WithDriver { get; set; }
+
+
     }
 }

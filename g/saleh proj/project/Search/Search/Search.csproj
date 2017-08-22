@@ -49,6 +49,7 @@
     <Compile Include="BookingInfo.cs" />
     <Compile Include="CheckOut.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CompanyRegistration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

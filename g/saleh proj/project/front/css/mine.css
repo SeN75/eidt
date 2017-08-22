@@ -1,0 +1,330 @@
+.br{
+    
+border-bottom:  2px solid #008FCC;
+
+}
+.br-1{
+    border: 2px solid #eeeeee;
+    border-radius: 2px;
+}
+.br-2{
+    margin-top: 25px;
+     margin-bottom: 25px;
+    
+}
+.r{padding-right: 5px;}
+.l{padding-left: 5px;}
+.img{height:150px; width: 250px;}
+.n{list-style: none; display: inline-block;}
+.n{
+    
+    background-color: rgba(0, 143, 204,0.8)
+}
+
+.
+
+
+
+
+
+
+
+.marketing-site-three-up {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.marketing-site-three-up .row {
+  max-width: 900px;
+}
+
+.marketing-site-three-up .columns {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-three-up .columns {
+    margin-bottom: 0;
+  }
+}
+
+.marketing-site-three-up .fa {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1779ba;
+}
+
+.marketing-site-three-up-headline {
+  margin-bottom: 2rem;
+  font-size: 24px;
+}
+
+
+
+.fullscreen-image-slider .orbit-image {
+  width: 100%;
+  height: 100vh;
+}
+
+.fullscreen-image-slider .orbit-caption {
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  background: none;
+  text-align: center;
+  color: #fefefe;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.promo-hero {
+  width: 100%;
+  text-align: center;
+  height: 420px;
+  background: #8a8a8a;
+  position: relative;
+  color: white;
+}
+
+.promo-hero .button.white-hollow {
+  border: 1px solid #fefefe;
+  color: #fefefe;
+  background-color: transparent;
+  transition: border 0.5s ease;
+}
+
+.promo-hero .button.white-hollow:hover, .promo-hero .button.white-hollow:active, .promo-hero .button.white-hollow:focus {
+  border: 1px solid #b2b2b2;
+  transition: border 0.5s ease;
+}
+
+.promo-hero-content {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.promo-hero-title {
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+}
+
+.promo-hero-description {
+  margin-bottom: 1rem;
+}
+
+.promo-hero-bg-image {
+  overflow: hidden;
+  background-image: url("https://www.e-zrentacar.com/wp-content/plugins/advantage-vehicles/assets/PTAR_800x400.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.promo-hero-bg-image:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.subnav-hero-section {
+  text-align: center;
+  background: #1779ba;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+}
+
+.subnav-hero-section .subnav-hero-headline {
+  color: #fefefe;
+}
+
+.subnav-hero-subnav {
+  float: none;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.subnav-hero-subnav li {
+  float: none;
+  display: inline-block;
+}
+
+.subnav-hero-subnav li a {
+  padding: 0.9rem 1rem;
+  font-size: 0.75rem;
+  color: #fefefe;
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.35s ease-in-out;
+}
+
+.subnav-hero-subnav li a.is-active {
+  background: rgba(254, 254, 254, 0.15);
+}
+
+.subnav-hero-subnav li a:hover {
+  background: rgba(254, 254, 254, 0.15);
+}
+
+
+.topbar-responsive {
+  background: #008FCC;
+  padding: 1rem 1.5rem;
+}
+
+.topbar-responsive .topbar-responsive-logo {
+  color: #fefefe;
+  vertical-align: middle;
+}
+
+.topbar-responsive .menu {
+  background:#008FCC;
+}
+
+.topbar-responsive .menu li:last-of-type {
+  margin-right: 0;
+}
+
+.topbar-responsive .menu a {
+  color: #fefefe;
+  transition: color 0.15s ease-in;
+}
+
+.topbar-responsive .menu a:hover {
+  color: #c6d1d8;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive .menu a {
+    padding: 0.875rem 0;
+  }
+}
+
+.topbar-responsive .menu .topbar-responsive-button {
+  color: #fefefe;
+  border-color: #fefefe;
+  border-radius: 5000px;
+  transition: color 0.15s ease-in, border-color 0.15s ease-in;
+}
+
+.topbar-responsive .menu .topbar-responsive-button:hover {
+  color: #c6d1d8;
+  border-color: #c6d1d8;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive .menu .topbar-responsive-button {
+    width: 100%;
+    margin: 0.875rem 0;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive {
+    padding: 0.75rem;
+  }
+  .topbar-responsive .top-bar-title {
+    position: relative;
+    width: 100%;
+  }
+  .topbar-responsive .top-bar-title span {
+    position: absolute;
+    right: 0;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 0.25rem 0.45rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .topbar-responsive .top-bar-title span .menu-icon {
+    margin-bottom: 4px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive-links {
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    width: 100%;
+    -webkit-animation: fadeIn 1s ease-in;
+            animation: fadeIn 1s ease-in;
+  }
+}
+ 
+body{background-size: cover; background-color:antiquewhite;}
