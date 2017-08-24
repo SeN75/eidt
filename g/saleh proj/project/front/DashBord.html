@@ -57,18 +57,19 @@ $(document).ready(function(){
       </div>
       <div class="app-dashboard-sidebar-inner">
         <ul class="menu vertical">
-          <li><a href="#" class="is-active" id="ManageBranches">
-            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Manage Branches</span>
-          </a></li>
+         
           <li><a id="AddBranches">
-            <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text">Add Brabches</span>
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Add Brabches</span>
+          </a></li>
+             <li><a href="#" class="is-active" id="ManageBranches">
+            <i class="large fa  fa-bar-chart"></i><span class="app-dashboard-sidebar-text">Manage Branches</span>
           </a></li>
           
         </ul>
       </div>
     </div>
 
-    <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content  id="ManageBranch">
+    <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content  id="AddBranch">
        
             <div class="large-2 columns"></div>
             <div class="small-12 medium-12 large-8 columns expanded">
@@ -91,9 +92,9 @@ $(document).ready(function(){
                 </div>
                 <hr>
                 <div class="row">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r m" placeholder="frst name">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r m" placeholder="frst name">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r m" placeholder="last name">
+                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="frst name">
+                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="frst name">
+                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="last name">
                 </div>
                 <br>
                 <div class="row">
@@ -110,7 +111,7 @@ $(document).ready(function(){
                 
                  <div class="row">
                     <div class="small-4 medium-4 large-4 columns "></div>
-                   <button type="button" class="alert button small-4 medium-4 large-4 columns">Sing Up</button>
+                   <button type="button" class="alert button small-4 medium-4 large-4 columns">Save</button>
                     <div class="small-4 medium-4 large-4 columns "></div>
                      
                 </div>
@@ -124,17 +125,45 @@ $(document).ready(function(){
 
     </div>
       
-      <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content id="AddBranch" style="display: none;">
+      <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content id="ManageBranch" style="display: none;">
         
+          <table class="dashboard-table">
+  <tbody>
+    <tr>
+      <td>
+        <div class="flex-container align-justify align-top">
+          <div class="flex-child-shrink">
+            <img class="dashboard-table-image" >
+          </div>
+          <div class="flex-child-grow">
+            <h6 class="dashboard-table-text">Name</h6>
+          </div>
+        </div>
+      </td>
+         <td>Stat</td>
+      <td class="bold"></td>
+       
+      <td></td>
+      <td>
+        Location
+      </td>
+      <td class="listing-inquiry-status">
+          <a href="#">Edit</a>
+      </td>
+    </tr>
+      
+    </tbody>
+</table>
           
-
-
-
-      
+          
+          
       </div>
+          
+          
+     </div>
 
       
-  </div>
+
 </div>
 
 
