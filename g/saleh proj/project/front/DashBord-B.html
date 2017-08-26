@@ -18,26 +18,40 @@
   e.preventDefault();
   $(this).parents('.app-dashboard').toggleClass('shrink-medium').toggleClass('shrink-large');
 });
-            
+        </script><script>       
 $(document).ready(function(){
-    $("#ManageBranches").click(function(){
-        $("#ManageBranch").show();
-        $("#AddBranch").hide();
+    $("#ManageCars").click(function(){
+        $("#ManageCar").show();
+        $("#AddCar").hide();
     });
 });
             $(document).ready(function(){
-    $("#AddBranches").click(function(){
-        $("#ManageBranch").hide();
-        $("#AddBranch").show();
+    $("#AddCars").click(function(){
+        $("#ManageCar").hide();
+        $("#AddCar").show();
     });
 });
 </script>
 	</head>
 
 	<body>
-        
-      <div class="app-dashboard shrink-medium">
-  
+        <div class="app-dashboard shrink-medium">
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+      <a class="app-dashboard-logo">Foundation</a>
+    </div>
+    <div class="columns show-for-medium">
+      <div class="app-dashboard-search-bar-container">
+        <input class="app-dashboard-search" type="search" placeholder="Search">
+        <i class="app-dashboard-search-icon fa fa-search"></i>
+      </div>
+    </div>
+    <div class="columns shrink app-dashboard-top-bar-actions">
+      <button href="#" class="button hollow">Logout</button>
+      <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
+    </div>
+  </div>
 
   <div class="app-dashboard-body off-canvas-wrapper">
     <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
@@ -57,19 +71,18 @@ $(document).ready(function(){
       </div>
       <div class="app-dashboard-sidebar-inner">
         <ul class="menu vertical">
-         
-          <li><a id="AddBranches">
-            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Add Brabches</span>
+          <li><a href="#" class="is-active" id="AddCars">
+            <i class="large fa fa-institution" ></i><span class="app-dashboard-sidebar-text">ِAdd Cars</span>
           </a></li>
-             <li><a href="#" class="is-active" id="ManageBranches">
-            <i class="large fa  fa-bar-chart"></i><span class="app-dashboard-sidebar-text">Manage Branches</span>
+          <li><a id="#ManageCars">
+            <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text">Manage Cars</span>
           </a></li>
           
         </ul>
       </div>
     </div>
 
-    <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content  id="AddBranch">
+     <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content  id="AddCar" style="display: none;">
        
             <div class="large-2 columns"></div>
             <div class="small-12 medium-12 large-8 columns expanded">
@@ -77,43 +90,49 @@ $(document).ready(function(){
                 <br><br>
                 
                 <div class="row">
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                    <select class="small-6 medium-6 large-6 columns br "><option>Type</option></select>
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                </div><div class="row">
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                    <select class="small-6 medium-6 large-6 columns br "><option>Class</option></select>
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                </div><div class="row">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="Branch e-mail">
+                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="Models" style="height: 100px;">
                     <div class="small-1 medium-1 large-1 columns "></div>
                 </div><div class="row">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="location">
+                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="Car plate">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                </div>
-                <div class="row">
+                </div><div class="row">
+                    <div class=" small-1 medium-1 large-1 columns "></div>
+                    <input type="text" class="small-4 medium-4 large-4 columns br r" placeholder="DoorNumber">
+                    <div class="small-2 medium-2 large-2 columns "></div>
+                    <input type="text" class="small-4 medium-4 large-4 columns br l" placeholder="SeateNumber">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="cars number">
+                </div><div class="row">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                </div>
-                <hr>
-                <div class="row">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="frst name">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="frst name">
-                    <input type="text" class="small-4 medium-4 large-4 columns br r " placeholder="last name">
-                </div>
-                <br>
-                <div class="row">
+                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="Count of Cylinders">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                    <input type="text" class="small-10 medium-10 large-10 columns br"placeholder="e-mail">
+                </div><div class="row">
+                    <div class=" small-1 medium-1 large-1 columns "></div>
+                    <input type="text" class="small-4 medium-4 large-4 columns br r" placeholder="Mileage meter">
+                    <div class="small-2 medium-2 large-2 columns "></div>
+                    <input type="text" class="small-4 medium-4 large-4 columns br l" placeholder="Expiry of the form">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                </div>
-                
-                <div class="row">
+                </div><div class="row">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                    <input type="text" class="small-10 medium-10 large-10 columns br "placeholder="phone number">
+                    <input type="text" class="small-10 medium-10 large-10 columns br "placeholder="Expiration date form">
                     <div class="small-1 medium-1 large-1 columns "></div>
-                </div>
-                
-                 <div class="row">
+                </div><div class="row">
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                    <select class="small-6 medium-6 large-6 columns br "><option>TransmissionType</option></select>
+                    <div class="small-3 medium-3 large-3 columns "></div>
+                </div><div class="row">
                     <div class="small-4 medium-4 large-4 columns "></div>
-                   <button type="button" class="alert button small-4 medium-4 large-4 columns">Save</button>
+                   <button type="button" class="alert button small-4 medium-4 large-4 columns">Add</button>
                     <div class="small-4 medium-4 large-4 columns "></div>
-                     
                 </div>
                 <br>
                     
@@ -123,9 +142,7 @@ $(document).ready(function(){
            
             
 
-    </div>
-      
-      <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content id="ManageBranch" style="display: none;">
+    </div> <div class="app-dashboard-body-content off-canvas-content row expanded shdow" data-off-canvas-content id="ManageCar"style="display:;">
         
           <table class="dashboard-table">
   <tbody>
@@ -136,16 +153,16 @@ $(document).ready(function(){
             <img class="dashboard-table-image" >
           </div>
           <div class="flex-child-grow">
-            <h6 class="dashboard-table-text">Name</h6>
+            <h6 class="dashboard-table-text">Class</h6>
           </div>
         </div>
       </td>
-         <td>Stat</td>
+         <td>Type</td>
       <td class="bold"></td>
        
-      <td></td>
+      <td>Car Plate</td>
       <td>
-        Location
+       Model
       </td>
       <td class="listing-inquiry-status">
           <a href="#">Edit</a>
@@ -158,13 +175,10 @@ $(document).ready(function(){
           
           
       </div>
-          
-          
-     </div>
-
       
-
+  </div>
 </div>
+
 
 
 	</body>

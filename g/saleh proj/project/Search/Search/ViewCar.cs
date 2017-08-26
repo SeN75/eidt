@@ -18,12 +18,13 @@ namespace Search
         [Required]
         public string ModelCar { get; set; }
         [Required]
+        public string ClassCar { get; set; }
+        [Required]
         public string MoreInfo { get; set; }
         //more info 
         public string  BagSpace { get; set; }
         public string SeateNumber { get; set; }
         public string DoorNumber { get; set; }
-        public string TankyeSpace { get; set; }
         public string TransmissionType { get; set; }
 
     }
