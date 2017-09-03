@@ -609,11 +609,19 @@ footer ul li {
         display:block;
       
         margin-left: auto;
-        margin-right: auto;s
+        margin-right: auto;
     }
     
     .g {
         display: none;
     }
 }
-
+.step{
+    width: auto;height:5px;background-color: wheat;
+    
+}.stepp{
+    width: auto;height:5px;background-color:#FDC167;
+    
+}
+.pcolor{color:#FDC148;text-align: center;}
+.scolor{color:#1779ba;text-align: center;}
