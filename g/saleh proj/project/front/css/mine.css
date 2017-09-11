@@ -625,3 +625,6 @@ footer ul li {
 }
 .pcolor{color:#FDC148;text-align: center;}
 .scolor{color:#1779ba;text-align: center;}
+
+.bg{background-color:#1779ba;color:#FDC148;text-align: center; }
+.bg:hover{background-color:#1779ba;color:#FDC148;text-align: center; }
