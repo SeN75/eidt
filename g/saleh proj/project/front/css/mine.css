@@ -784,7 +784,7 @@ body {
 	}
 	.m{display: none;}
 }
-@media screen and (min-width: 63.750em) {
+@media screen and (min-width: 40em) {
 	.g {
 		display: none;
 		
