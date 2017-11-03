@@ -1,0 +1,192 @@
+﻿{
+  "page_dir": "ltr",
+  "app_name": "EjarTech",
+
+  "lang": "en",
+
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "sub_title": "Rent Or Buy Car Quickly",
+  "sub_sub_title": "Reserve your next desired rental car or used rental car for sale",
+
+  "do_you_forget_password": "Forgot your password or user name?",
+  "confirm": "Confirm",
+
+  "update_data": "Update",
+
+  "forget_error": "The inputs it's dosn't match please try again",
+
+  "error_login": "Error in email or passowrd",
+
+  "my_account": "My Account",
+
+  "old_password": "Current Password",
+  "new_password": "New Password",
+  "re_new_password": "Re New Password",
+
+  "change_account_settings": "Change Information",
+  "change_password": "Change Account Password",
+  "change_phone_number": "Change Phone Number",
+
+  "please_enter_valid_phone_number": "please enter valid phone number",
+
+  "create_account": "Create Account",
+  "user_name": "Full Name",
+  "first_name": "First Name",
+  "family_name": "Family Name",
+  "password": "Password",
+  "re_password": "Re Enter Password",
+  "email": "E-Mail",
+  "birth_day": "BirthDay",
+  "favorite_language": "FavoriteLanguage",
+  "phone_number": "Phone Number(EX. 966501237896)",
+  "phone_number_s": "Phone Number",
+  "city": "City",
+  "is_male": "Male?",
+
+  "users": "Users ",
+
+  "admin_portal": "Admin Portal",
+  "dashbord": "Dashbord",
+
+  "there_account": "There account with the same information please reset you password or contact us",
+  "virify_code": "Virify Code",
+
+  "no_data": "There Some Problem please contact with us",
+
+  "code_not_match": "Error In Active Code",
+
+  "code_done": "the phone number virifyed",
+
+  "to_much_virify": "Do you have any problem with mobile virify, contact with our support",
+  "virify_mobile": "VirifyMobile",
+
+  "confirm_change_number": "you need to virify this number later are you shure?",
+
+  "branch_name": "Branch Name",
+  "branch_email": "Branch EMail",
+  "branch_phone": "Branch Phone Number",
+  "branch_address": "Branch Address",
+  "branch_supervisor": "Branch Supervisor",
+  "branch_location": "Branch Location",
+
+  "home_title": "Home",
+  "add_branch": "Add Branch",
+  "add_company": "Add Company",
+  "edit_companys": "Manage Companys",
+  "edit_branches": "Edit Branches",
+  "update_branch": "Update Branch",
+
+  "add_car_for_rent": "Add Car For Rent",
+
+  "car_type": "Car Type",
+  "car_company_name": "Car Company Name",
+  "model_name": "Model Name",
+  "model_year": "Model Year",
+  "doors_number": "Doors Number",
+  "seats_number": "Seats Number",
+  "bags_number": "Bags can Car Take it",
+  "gear_type": "Gear Type",
+  "auto": "Auto",
+  "manual": "Manual",
+  "is_open_mile": "Is Open Mile?",
+  "mile": "Kilomitter Per Day(Put any value When it's open mile)",
+  "insurance": "Insurance",
+  "price_per_day": "Price Per Day SR",
+  "price_per_week": "Price Per Week SR",
+  "price_per_month": "Price Per Month SR",
+
+
+  "u_blocked": "This Account Blocked",
+  "block": "Block",
+  "de_block": "DeBlock",
+  "edit": "Edit",
+  "company_name": "Company Name",
+  "c_panel": "Control Panel",
+  "for_help": "For Help Contact US (00966 56 999 0194)(00966 56 758 5300)(EjarTech@EjarTech.com)",
+
+
+  "Hatch": "Hatch",
+  "Sedan": "Sedan",
+  "SUV": "SUV",
+  "Wagon": "Wagon",
+  "Ute": "Ute",
+  "Cap Chassis": "Cap Chassis",
+  "Convertable": "Convertable",
+  "Coupe": "Coupe",
+  "People Mover": "People Mover",
+  "Van": "Van",
+  "Light Truck": "Light Truck",
+
+
+  "Audi": "Audi",
+  "BMW": "BMW",
+  "Ford": "Ford",
+  "Holden": "Holden",
+  "Hyundai": "Hyundai",
+  "Kia": "Kia",
+  "Nissan": "Nissan",
+  "Subaru": "Subaru",
+  "Volkswagen": "Volkswagen",
+  "Abarth": "Abarth",
+  "Alfa Romeo": "Alfa Romeo",
+  "Aston Martin": "Aston Martin",
+  "Bently": "Bently",
+  "Chrysler": "Chrysler",
+  "Citroen": "Citroen",
+  "Ferrari": "Ferrai",
+  "Fiat": "Fiat",
+  "Foton": "Foton",
+  "Great Wall": "Great Wall",
+  "Haval": "Haval",
+  "HSV": "HSV",
+  "Honda": "Honda",
+  "Infiniti": "Infiniti",
+  "Isuzu": "Isuzu",
+  "Jaguar": "Jaguar",
+  "Jeep": "Jeep",
+  "Lamborghini": "Lamborghini",
+  "Peugeot": "Peugeot",
+  "Porsche": "Porsche",
+  "Proton": "Proton",
+  "RAM": "RAM",
+  "Renault": "Renault",
+  "Rolls-Royes": "Rolls-Royes",
+  "SKODA": "SKODA",
+  "Suzuki": "Suzuki",
+  "Tata": "Tata",
+  "Tesla": "Tesla",
+  "Toyota": "Toyota",
+  "Volvo": "Volvo",
+  "Land Rover": "Land Rover",
+  "LDV": "LDV",
+  "Lexus": "Lexus",
+  "Lotus": "Lotus",
+  "Mahindra": "Mahindra",
+  "Maserate": "Maserate",
+  "Mazda": "Mazda",
+  "McLaren": "McLaren",
+  "Mercedes-Benz": "Mercedes-Benz",
+  "MG": "MG",
+  "MINI": "MINI",
+  "Mitsubishi": "Mitsubishi",
+
+  "enter_up_min": "Please Enter Value Greate Than 0",
+
+  "view_cars": "View Cars",
+  "car_model_year": "Car Model, Year",
+
+  "city_name": "City Name",
+
+  "pick_up_city": "Pick Up City",
+  "pick_up_time": "Pick Up Time",
+  "pick_up_date": "Pick Up Date",
+  "drop_off_city": "Drop Off City",
+  "drop_off_time": "Drop off Time",
+  "drop_off_date": "Drop off Date",
+
+  "search": "Search",
+  "choose": "Choose",
+  "checkout": "Checkout"
+}

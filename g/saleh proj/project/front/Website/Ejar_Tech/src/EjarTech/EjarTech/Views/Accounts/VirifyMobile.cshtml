@@ -1,0 +1,15 @@
+﻿@model EjarTech.Models.AccountsModel.VirifiPhoneNumberCode
+<!--inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider TranslationManager-->
+<!--inject EjarTech.Services.AuthServices.Helpers.IUserProvider UserProvider-->
+<!--inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedCities> Cities-->
+<!--inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedLanguage> Language-->
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h3 class="error">@ViewData["warning"]</h3>
+<form action="/Accounts/VirifyMobile" method="POST">
+    <input asp-for="Code" /><br /><a href="@Url.Action("ReSendVirify")">Re Send Code</a><br /><a href="@Url.Action("ChangePhoneNumber")">Change Number</a>
+    <input type="submit" />
+</form>

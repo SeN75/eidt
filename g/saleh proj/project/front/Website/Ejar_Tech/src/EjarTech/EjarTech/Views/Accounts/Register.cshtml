@@ -1,0 +1,107 @@
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider TranslationManager
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedCities> Cities
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedLanguage> Language
+@model EjarTech.Models.AccountsModel.Register
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<style>
+    .br {
+        border-bottom: 2px solid #008FCC;
+    }
+
+    .br-1 {
+        border: 2px solid #eeeeee;
+        border-top: none;
+        border-radius: 2px;
+    }
+
+    .br-2 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .r {
+        padding-right: 5px;
+    }
+
+    .l {
+        padding-left: 5px;
+    }
+
+    .text-center input {
+        text-align: center;
+    }
+</style>
+<form asp-action="Register" method="POST">
+    <div class="row br-2 text-center">
+        <div class="large-3 columns"></div>
+        <div class="small-12 medium-12 large-6 columns br-1 shdow ">
+            <div class="row" style="background-color: #008FCC;text-align: center;color: white; font-size: 35px;border-bottom: 3px solid #cc0000;border-radius: 2px;"><div class="small-12 medium-12 large-12 columns br-2">@TranslationManager["create_account"]</div></div>
+            <br />
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="FirstName"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="LastName"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="EMail"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="RePassword"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="Password"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="PhoneNumber"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span asp-validation-for="BirthDay"></span></small>
+                </div>
+                <div class="small-12 medium-12 large-12 columns">
+                    <small class="field-validation-error"><span>@ViewData["extra"]</span></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" small-1 medium-1 large-1 columns "></div>
+                <input asp-for="FirstName" class="small-4 medium-4 large-4 columns br r" placeholder="@TranslationManager["first_name"]">
+                <div class="small-2 medium-2 large-2 columns "></div>
+                <input asp-for="LastName" class="small-4 medium-4 large-4 columns br l" placeholder="@TranslationManager["family_name"]">
+                <div class="small-1 medium-1 large-1 columns "></div>
+            </div>
+            <div class="row">
+                <div class="small-1 medium-1 large-1 columns "></div>
+                <input asp-for="EMail" class="small-10 medium-10 large-10 columns br" placeholder="@TranslationManager["email"]">
+                <div class="small-1 medium-1 large-1 columns "></div>
+            </div>
+            <div class="row">
+                <div class=" small-1 medium-1 large-1 columns "></div>
+                <input asp-for="Password" class="small-4 medium-4 large-4 columns br r" placeholder="@TranslationManager["password"]">
+                <div class="small-2 medium-2 large-2 columns "></div>
+                <input asp-for="RePassword" class="small-4 medium-4 large-4 columns br l" placeholder="@TranslationManager["re_password"]">
+                <div class="small-1 medium-1 large-1 columns "></div>
+            </div>
+            <div class="row">
+                <div class="small-1 medium-1 large-1 columns "></div>
+                <input asp-for="PhoneNumber" class="small-10 medium-10 large-10 columns br " placeholder="@TranslationManager["phone_number"]">
+                <div class="small-1 medium-1 large-1 columns "></div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns "></div>
+                <input asp-for="BirthDay" class="small-6 medium-6 large-6 columns br" placeholder="@TranslationManager["birth_day"]">
+                <div class="small-3 medium-3 large-3 columns "></div>
+            </div>
+            <div class="row">
+                <div class="small-4 medium-4 large-4 columns "></div>
+                <button type="submit" class="alert button small-4 medium-4 large-4 columns">Sing Up</button>
+                <div class="small-4 medium-4 large-4 columns "></div>
+            </div>
+            <br>
+        </div>
+        <div class="large-3 columns"></div>
+    </div>
+</form>

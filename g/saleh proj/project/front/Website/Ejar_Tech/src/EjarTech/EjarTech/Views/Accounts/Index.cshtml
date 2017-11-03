@@ -1,0 +1,11 @@
+﻿@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider TranslationManager
+@inject EjarTech.Services.AuthServices.Helpers.IUserProvider UserProvider
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedCities> Cities
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.SupportedLanguage> Language
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    EjarTech.Models.DatabaseModels.User user = await UserProvider.GetUserAsync();
+}
+<h1>Accounts</h1>

@@ -1,0 +1,115 @@
+@model EjarTech.Models.SearchModels.ViewCarsRent
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider TranslationManager
+@{
+    ViewData["Title"] = "CarRentSearch";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    int days = Convert.ToInt32((Model.To - Model.From).TotalDays);
+}
+
+<header class="subnav-hero-section ">
+    <div class="row">
+        <div class="columns small-12 align-center">
+            <center><img src="~/images/bb.png"></center>
+        </div>
+    </div>
+    <ul class="subnav-hero-subnav dropdown  animated slideInDown" data-dropdown-menu id="primary-menu">
+        <li><a href="home.html">Home</a></li>
+        <li>
+            <a data-toggle="menu" style="">Acount</a>
+        </li>
+        <li><a href="Rental.html" class="is-active">Rent</a></li>
+        <li>
+            <a href="Contact.html">contact</a>
+        </li>
+    </ul>
+</header>
+<ul class="dropdown-pane small ul" id="menu" data-dropdown data-alignment="center">
+    <li class="li"><a href="Sitting.html">Sitting</a></li>
+    <li class="li"><a href="Orders.html">Orders</a></li>
+    <li class="li"><a href="#">Log out</a></li>
+</ul>
+<!--	nav-->
+<!--Steps-->
+<div class="row g animated slideInUp" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="columns small-12 medium-12 large-12">
+        <div class="row shdow">
+            <div class="columns small-4 pcolor">
+                <h5>@TranslationManager["search"]</h5>
+            </div>
+            <div class="columns small-4 scolor">
+                <h5>@TranslationManager["choose"]</h5>
+            </div>
+            <div class="columns small-4 pcolor">
+                <h5>@TranslationManager["checkout"]</h5>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="columns small-4 step"></div>
+            <div class="columns small-4 stepp"></div>
+            <div class="columns small-4 step"></div>
+        </div>
+    </div>
+</div>
+<!--Steps-->
+@foreach (var item in Model.Cars)
+{
+    <!--car	-->
+    <div class="row bg-r-w  margin smallrize fadeInUpBig animated">
+        <div class="columns small-12 medium-5 large-4">
+            <!--pic-->
+            <div class="row align-center">
+                <div class="small-8 medium-10 large-12 colunms">
+                    <img style="" src="http://st.motortrend.com/uploads/sites/10/2016/05/2016-bmw-428-i-convertible-angular-front.png">
+                </div>
+            </div>
+            <!--pic-->
+            <!--Type Car-->
+            <div class="row align-center">
+                <div class="columns small-10 col-c">
+                    <h3>@item.CarType</h3>
+                </div>
+            </div>
+            <!--Type Car-->
+        </div>
+
+        <div class="columns small-12 medium-7 large-8">
+            <!--C-->
+            <div class="row">
+                <div class="columns small-12 medium-8 ">
+                    <h5>@item.CompanyName, @item.ModelName @item.ModelYear OR Similar</h5>
+                </div>
+                <div class="columns small-12 medium-4 ">
+                    <!--img src="https://servicecarrental.com/wp-content/uploads/2017/06/logo-Service-Car-Rental-1000x268pxl.png" style="width: 120px; height: 90px;"-->
+                </div>
+
+            </div>
+            <!--C-->
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="columns small-6 ">
+                    <i class="fa fa-tachometer fl-lg" aria-hidden="true"><span style="margin-left: 10px;">@(item.IsOpenMile? "Unlimited KM":item.MileLimit.ToString() + " KM Per Day")</span></i>
+                </div>
+                <div class="columns small-6 ">
+                    <i class="fa fa-users fl-lg" aria-hidden="true"><span style="margin-left: 10px;">@item.SeatsNumber</span></i>
+                </div>
+                <div class="columns small-6 ">
+                    <i class="fa fa-shopping-bag fl-lg" aria-hidden="true"><span style="margin-left: 10px;">@item.BagsNumber</span></i>
+                </div>
+                <div class="columns small-6 ">
+                    <i class="fa fa-location-arrow fl-lg" aria-hidden="true"><span style="margin-left: 10px;">@item.GearType</span></i>
+                </div>
+            </div>
+            <div class="row align-center ">
+                <div class="columns small-8">
+                    <h4 style="" class="col-c">
+                    @if (days < 7)
+                    {@(item.PricePerDay.ToString() + "SR Per Day")}
+                    else if (days < 30)
+                    { @(item.PricePerWeek.ToString() + "SR Per Day")}
+                    else
+                    {@(item.PricePerMonth.ToString() + "SR Per Day")}</h4>
+                    <a class="button expanded bg-r-a" href="/Search/ViewReservationInfo?carId=@item._id">Contiue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

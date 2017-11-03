@@ -1,0 +1,152 @@
+﻿@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translation
+@inject EjarTech.Services.AuthServices.Helpers.IUserProvider UserProvider
+@{
+    Layout = null;
+    EjarTech.Models.DatabaseModels.User user = await UserProvider.GetUserAsync();
+}
+<!DOCTYPE html>
+<html dir="@Translation["page_dir"]">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@ViewData["title"]</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <!--script> type="text/javascript" src="~/js/jquery-3.2.1.min.js"></script-->
+        <script type="text/javascript" src="~/js/what-input.js"></script>
+        <script type="text/javascript" src="~/js/foundation.min.js"></script>
+        <link rel="stylesheet" href="~/css/foundation.min.css" />
+        <link rel="stylesheet" href="~/css/dashbord.css" />
+        <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    </head>
+    <body>
+        <div class="app-dashboard shrink-medium">
+            <div style="direction: @Translation["page_dir"];" class="row expanded app-dashboard-top-nav-bar">
+                <div class="columns medium-2">
+                    <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+                    <a class="app-dashboard-logo">EjarTech</a>
+                </div>
+                <div class="columns show-for-medium">
+                    <!--div class="app-dashboard-search-bar-container">
+                        <input class="app-dashboard-search" type="search" placeholder="Search">
+                        <i class="app-dashboard-search-icon fa fa-search"></i>
+                    </div-->
+                </div>
+                <div class="columns shrink app-dashboard-top-bar-actions">
+                    <a style="margin-top: 8px; margin-left: 5px; margin-right: 5px;"  href="@Url.Action("Logout","Accounts")" class="button hollow">@Translation["logout"]</a>
+                    <a onclick="contactSupport();" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
+                </div>
+            </div>
+
+            <div class="app-dashboard-body off-canvas-wrapper">
+                <div id="app-dashboard-sidebar" class="app-dashboard-sidebar off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+                    <div class="app-dashboard-sidebar-title-area">
+                        <div class="app-dashboard-close-sidebar">
+                            <h3 class="app-dashboard-sidebar-block-title">@if (user.Permission == "AdminF")
+                            {<span>@Translation["admin_portal"]</span>}
+                            else{<span>@Translation["dashbord"]</span>}</h3>
+                            <!-- Close button -->
+                            <button id="close-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-sidebar-close-button show-for-medium" aria-label="Close menu" type="button">
+                                <span aria-hidden="true"><a href="#"><i class="large fa fa-angle-double-left"></i></a></span>
+                            </button>
+                        </div>
+                        <div class="app-dashboard-open-sidebar">
+                            <button id="open-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-open-sidebar-button show-for-medium" aria-label="open menu" type="button">
+                                <span aria-hidden="true"><a href="#"><i class="large fa fa-angle-double-right"></i></a></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-dashboard-sidebar-inner">
+                        <ul class="menu vertical">
+                            @if (user.Permission == "Branch")
+                            {
+                            <li>
+                                <a href="@Url.Action("AddCarForRent", "Dashbord")" class="is-active">
+                                    <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">@Translation["add_car_for_rent"]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("ViewCars", "Dashbord")" class="is-active">
+                                    <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">@Translation["view_cars"]</span>
+                                </a>
+                            </li>
+                            }
+                            else if (user.Permission == "BranchManager")
+                            {
+                                <li>
+                                    <a href="@Url.Action("AddBranch", "Dashbord")" class="is-active">
+                                        <i class="large fa fa-plus-square"></i><span class="app-dashboard-sidebar-text">@Translation["add_branch"]</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ViewBranches", "Dashbord")" class="is-active">
+                                        <i class="large fa fa-building"></i><span class="app-dashboard-sidebar-text">@Translation["edit_branches"]</span>
+                                    </a>
+                                </li>
+                            }
+                            else if (user.Permission == "AdminF")
+                            {
+                                <li>
+                                    <a asp-action="AddCompany">
+                                        <i class="fa fa-building large"></i><span class="app-dashboard-sidebar-text">@Translation["add_company"]</span>
+                                    </a>
+                                </li>
+                                <!--li>
+                                    <a asp-action="AddCompany">
+                                        <i></i><span class="app-dashboard-sidebar-text">@Translation["add_branch"]</span>
+                                    </a>
+                                </li-->
+                                <li>
+                                    <a asp-action="ViewCompanyes">
+                                        <i class="fa fa-pencil large"></i><span class="app-dashboard-sidebar-text">@Translation["edit_companys"]</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="ViewUsers">
+                                        <i class="fa fa-user large"></i><span class="app-dashboard-sidebar-text">@Translation["users"]</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app-dashboard-body-content ">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <footer class="row expanded" style="background-color: #808080; min-height: 40px;">
+            <div class="small-12 meduim-4 large-4 colummns"></div>
+            <div class="small-12 meduim-4 large-4 colummns" style="text-align: center;">
+                <ul style="display: inline-block; text-align: center;">
+                    <li style="display: inline-block; text-align: center; margin-left: 10px;"><a onclick="changeLang('ar');">عربي</a></li>
+                    <li style="display: inline-block; text-align: center;"><a onclick="changeLang('en');">English</a></li>
+                </ul>
+            </div>
+            <div class="small-12 meduim-4 large-4 colummns"></div>
+        </footer>
+        <script type="text/javascript">
+            $(document).foundation();
+            $('[data-app-dashboard-toggle-shrink]').on('click', function (e) {
+                e.preventDefault();
+                $(this).parents('.app-dashboard').toggleClass('shrink-medium').toggleClass('shrink-large');
+            });
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            function changeLang(lang)
+            {
+                setCookie("_lang", lang, 360);
+                location.reload();
+            }
+            function contactSupport()
+            {
+                var text = ("@Translation["for_help"]").toString();
+                alert(text);
+            }
+        </script>
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>

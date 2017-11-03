@@ -1,0 +1,55 @@
+﻿@model EjarTech.Models.AccountsModel.AccountsSettings
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translate
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@section Styles {
+    <style>
+        .active {
+            background-color: #2268d7;
+        }
+
+        .top-cell a {
+            color: white;
+        }
+    </style>
+}
+<div class="row top-cell" style="background: #134eaa;">
+    <div class="small-12 meduim-4 large-4 columns active" style="text-align:center;"><a href="@Url.Action("Settings", "Accounts")">@Translate["change_account_settings"]</a></div>
+    <div class="small-12 meduim-4 large-4 columns" style="text-align:center;"><a href="@Url.Action("ChangePassword", "Accounts")">@Translate["change_password"]</a></div>
+    <div class="small-12 meduim-4 large-4 columns" style="text-align:center;"><a href="@Url.Action("ChangePhoneNumber", "Accounts")">@Translate["change_phone_number"]</a></div>
+</div>
+<form asp-action="Settings" method="POST">
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns" style="text-align: center;"><span asp-validation-for="FullName"></span></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns" style="text-align: center;"><span asp-validation-for="BirthDay"></span></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-3 large-3 columns"></div>
+        <div class="small-12 meduim-6 large-6 columns" style="text-align: center;"><span asp-validation-for="EMail"></span></div>
+        <div class="small-12 meduim-3 large-3 columns"></div>
+    </div>
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns"><label style="text-align: center;">@Translate["user_name"]<input asp-for="FullName" style="text-align: center; margin-right: auto; margin-left: auto;" placeholder="@Translate["user_name"]" /></label></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+    </div>
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns"><label style="text-align: center;">@Translate["birth_day"]<input asp-for="BirthDay" style="text-align: center; margin-right: auto; margin-left: auto;" placeholder="@Translate["birth_day"]" /></label></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+    </div>
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns"><label style="text-align: center;">@Translate["email"]<input asp-for="EMail" style="text-align: center; margin-right: auto; margin-left: auto;" placeholder="@Translate[" email"]" /></label></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+    </div>
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns"><button style="text-align: center;" class="expanded button primary">@Translate["update_data"]</button></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+    </div>
+</form>

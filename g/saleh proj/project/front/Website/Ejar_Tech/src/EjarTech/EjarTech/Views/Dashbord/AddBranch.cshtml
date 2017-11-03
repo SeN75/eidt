@@ -1,0 +1,109 @@
+﻿@model EjarTech.Models.DashbordModel.AddBranch
+
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translation
+@{
+    ViewData["Title"] = "AddBranch";
+    Layout = "~/Views/Shared/Dashbord.cshtml";
+    List<SelectListItem> langItems;
+    if (Translation["lang"].ToString() == "ar")
+    {
+        langItems = new List<SelectListItem> { new SelectListItem { Text = "جدة", Value = "جدة" } };
+    }
+    else
+    {
+        langItems = new List<SelectListItem> { new SelectListItem { Text = "Jeddah", Value = "Jeddah" } };
+    }
+}
+<style>
+    input {
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    .some-space {
+        margin-top: 40px;
+    }
+</style>
+<form action="@Url.Action("AddBranch", "Dashbord")" method="POST">
+    <div class="row expanded">
+        <div class="small-12 meduim-12 large-12 columns"><h1>@Translation["add_branch"]</h1></div>
+        <div class="small-12 meduim-12 large-12 columns"><h5>@ViewData["extra"]</h5></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="BranchName"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="Password"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="BranchEMail"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="BranchSupervisor"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="CityName"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="PhoneNumber"></span></div>
+        <div class="small-12 meduim-12 large-12 columns"><span asp-validation-for="Longitude"></span></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <input asp-for="BranchEMail" placeholder="@Translation["branch_email"]" />
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <input asp-for="Password" placeholder="@Translation["password"]" />
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <input asp-for="BranchName" placeholder="@Translation["branch_name"]" />
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <input asp-for="BranchSupervisor" placeholder="@Translation["branch_supervisor"]" />
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <input asp-for="PhoneNumber" placeholder="@Translation["branch_phone"]" />
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns">
+            <select asp-for="CityName" asp-items="langItems" placeholder="@Translation["city_name"]" style="text-align-last:center;">
+            </select>
+        </div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+
+        <div class="small-1 meduim-3 large-3 columns"></div>
+        <div id="map" style="height: 400px; margin-right: auto; margin-left: auto;" class="small-10 meduim-6 large-6 columns some-space"></div>
+        <div class="small-1 meduim-3 large-3 columns"></div>
+        <input type="hidden" name="Latitude" id="latitudeField" />
+        <input type="hidden" name="Longitude" id="longitudeField" />
+
+        <div class="small-12 meduim-4 large-4 columns"></div>
+        <div class="small-12 meduim-4 large-4 columns some-space"><button id="btn" type="submit" disabled class="expanded button success">@Translation["add_branch"]</button></div>
+        <div class="small-12 meduim-4 large-4 columns"></div>
+    </div>
+</form>
+@section Scripts {
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyB5FRnaqNxnCZaY66EY4aWRxRHnjn930As'></script>
+<script type="text/javascript" src="~/js/picker.min.js"></script>
+    <script type="text/javascript">
+        $("#map").locationpicker({
+            location: {
+                latitude: 21.5563332,
+                longitude: 39.1387585
+            },
+            radius: 0,
+            zoom: 15,
+            onchanged: function (currentLocation)
+            {
+                document.getElementById("btn").disabled = false;
+                document.getElementById("latitudeField").value = parseFloat(currentLocation.latitude);
+                document.getElementById("longitudeField").value = parseFloat(currentLocation.longitude);
+                console.log(parseFloat(currentLocation.latitude));
+                console.log(parseFloat(currentLocation.longitude));
+            }
+        });
+    </script>
+}

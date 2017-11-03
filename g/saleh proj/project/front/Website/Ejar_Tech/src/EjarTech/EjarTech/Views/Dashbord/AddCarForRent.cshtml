@@ -1,0 +1,148 @@
+@model EjarTech.Models.DashbordModel.AddCarForRent
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translate
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.CarsCatalog> catalog
+@{
+    ViewData["Title"] = "AddCar";
+    Layout = "~/Views/Shared/Dashbord.cshtml";
+    List<SelectListItem> typeItems = new List<SelectListItem>();
+    foreach (string item in catalog.Value.CarTypes)
+    {
+        typeItems.Add(new SelectListItem() { Text = Translate[item].ToString(), Value = item });
+    }
+    List<SelectListItem> companysNames = new List<SelectListItem>();
+    foreach (string item in catalog.Value.Companys)
+    {
+        companysNames.Add(new SelectListItem() { Text = Translate[item].ToString(), Value = item });
+    }
+
+}
+
+<form asp-action="AddCarForRent" method="POST" class="row expanded">
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;">@ViewData["notes"]</span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="CarType"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="CompanyName"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="ModelName"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="ModelYear"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="DoorsNumber"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="SeatsNumber"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="BagsNumber"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="GearType"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="CarPanelText"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="CarPanelNumber"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="IsOpenMile"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="MileNumber"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="Insurances"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="PricePerDay"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="PricePerWeek"></span>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <span style="color: #f00; font-size: 20px; font-weight: 400;" asp-validation-for="PricePerMonth"></span>
+    </div>
+
+        <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+            <label>
+                @Translate["car_type"]
+                <select style="text-align-last: center;" asp-for="CarType" asp-items="typeItems"></select>
+            </label>
+        </div>
+        <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+            <label>
+                @Translate["car_company_name"]
+                <select style="text-align-last: center;" asp-for="CompanyName" asp-items="companysNames"></select>
+            </label>
+        </div>
+        <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+            <label>@Translate["model_name"]<input style="text-align: center;" asp-for="ModelName" /></label>
+        </div>
+        <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+            <label>
+                @Translate["model_year"]
+            <select style="text-align-last: center;" asp-for="ModelYear">
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+            </select>
+        </label>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>@Translate["doors_number"]<input style="text-align: center;" asp-for="DoorsNumber" /></label>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>@Translate["seats_number"]<input style="text-align: center;" asp-for="SeatsNumber" /></label>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>@Translate["bags_number"]<input style="text-align: center;" asp-for="BagsNumber" /></label>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>
+            @Translate["gear_type"]
+        <select style="text-align-last: center;" asp-for="GearType">
+            <option value="auto">@Translate["auto"]</option>
+            <option value="manual">@Translate["manual"]</option>
+        </select>
+    </label>
+</div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>@Translate["panel_text"]<input style="text-align: center;" asp-for="CarPanelText" /></label>
+    </div>
+    <div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+        <label>@Translate["panel_number"]<input style="text-align: center;" asp-for="CarPanelNumber" /></label>
+    </div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["is_open_mile"]<input style="text-align: center;" asp-for="IsOpenMile" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["mile"]<input style="text-align: center;" asp-for="MileNumber" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["insurance"]<input style="text-align: center;" asp-for="Insurances" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["price_per_day"]<input style="text-align: center;" asp-for="PricePerDay" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["price_per_week"]<input style="text-align: center;" asp-for="PricePerWeek" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <label>@Translate["price_per_month"]<input style="text-align: center;" asp-for="PricePerMonth" /></label>
+</div>
+<div style="text-align: center;" class="small-12 meduim-12 large-12 columns">
+    <button class="button primary expanded" type="submit">Submit</button>
+</div>
+</form>

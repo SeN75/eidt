@@ -1,0 +1,44 @@
+@model System.Collections.Generic.IList<EjarTech.Models.DatabaseModels.Company>
+@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translate
+@{
+    ViewData["Title"] = "ViewCompanyes";
+    Layout = "~/Views/Shared/Dashbord.cshtml";
+}
+<style>
+    .center-text {
+        text-align: center;
+    }
+    .big-font {
+        font-size: 36px;
+    }
+    .med-font {
+        font-size: 26px;
+    }
+</style>
+<div class="row">
+    <div class="small-12 meduimm-4 large-4 columns center-text big-font">@Translate["company_name"]</div>
+    <div class="small-12 meduimm-4 large-4 columns center-text big-font">@Translate["edit"]</div>
+    <div class="small-12 meduimm-4 large-4 columns center-text big-font">@Translate["block"]\@Translate["de_block"]</div>
+</div>
+<div class="row expanded">
+    <div class="small-12 meduimm-12 large-12 columns center-text big-font"><hr /></div>
+</div>
+@foreach (EjarTech.Models.DatabaseModels.Company item in Model)
+{
+    <div class="row">
+        <div class="small-12 meduim-4 large-4 columns center-text med-font">@item.CompanyName</div>
+        <div class="small-12 meduim-4 large-4 columns center-text med-font"><a asp-action="EditCompany" asp-route-id="@item._id.ToString()">Edit</a></div>
+        @if (item.Active)
+        {
+            <div class="small-12 meduim-4 large-4 columns center-text med-font"><a asp-action="BlockAndDeBlockCompany" style="color: green;" asp-route-id="@item._id.ToString()">@(item.Active == true ? Translate["block"] : Translate["de_block"])</a></div>
+        }
+        else
+        {
+            <div class="small-12 meduim-4 large-4 columns center-text med-font"><a asp-action="BlockAndDeBlockCompany" style="color: red;" asp-route-id="@item._id.ToString()">@(item.Active == true ? Translate["block"] : Translate["de_block"])</a></div>
+        }
+    </div>
+
+    <div class="row expanded">
+        <div class="small-12 meduimm-12 large-12 columns center-text med-font"><hr /></div>
+    </div>
+}

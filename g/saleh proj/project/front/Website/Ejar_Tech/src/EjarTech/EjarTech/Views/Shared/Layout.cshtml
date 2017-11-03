@@ -1,0 +1,92 @@
+﻿@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider Translate
+@inject EjarTech.Services.AuthServices.Helpers.IUserProvider UserProvider
+@{ 
+    EjarTech.Models.DatabaseModels.User user = await UserProvider.GetUserAsync();
+}
+<!DOCTYPE html>
+<html dir='@Translate["page_dir"]'>
+    <head>
+        <script src="~/js/jquery.js"></script>
+        <script src="~/js/what-input.js"></script>
+        <script src="~/js/foundation.min.js"></script>
+        <!--link href="~/css/Site.css" rel="stylesheet" /-->
+        <link href="~/css/foundation.min.css" rel="stylesheet" />
+        <link href="~/css/mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/css/animate.min.css" />
+        <link rel="stylesheet" href="~/css/hover-min.css" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - EjarTech</title>
+        <style>
+            /*Start Top Bar*/
+            .bg-gray {
+                background-color: #575757;
+                text-align: center;
+            }
+            .link-style {
+                padding: 10px;
+                color: #ffffff;
+                font-weight: 800;
+                transition: all 0.5s;
+            }
+            .link-style:visited {
+                color: #ffffff;
+            }
+            .link-style:hover {
+                color: #227cc8;
+            }
+            /*End Top Bar*/
+        </style>
+        @RenderSection("Styles", required: false)
+    </head>
+    <body>
+        <!--Start Top Bar-->
+        @if (user == null)
+        {
+            <div class="row expanded bg-gray">
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Index", "Home")">@Translate["app_name"]</a></div>
+                <div class="small-12 meduim-6 large-6 columns"></div>
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Login", "Accounts")">@Translate["login"]</a></div>
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Register", "Accounts")">@Translate["register"]</a></div>
+            </div>
+        }
+        else
+        {
+            <div class="row expanded bg-gray">
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Index", "Home")">@Translate["app_name"]</a></div>
+                @if (user.Permission == "BranchManager" || user.Permission == "Branch")
+                {
+                    <div class="small-12 meduim-4 large-4 columns"></div>
+                    <div class="small-12 meduim-2 large-2 columns"><a href="@Url.Action("Index", "Dashbord")">@Translate["c_panel"]</a></div>
+                }
+                else if (user.Permission == "AdminF")
+                {
+                    <div class="small-12 meduim-4 large-4 columns"></div>
+                    <div class="small-12 meduim-2 large-2 columns"><a href="@Url.Action("Index", "AdminPortal")">@Translate["c_panel"]</a></div>
+                }
+                else
+                {
+                    if (!user.VirifyPhoneNumber)
+                    {
+                        <div class="small-12 meduim-4 large-4 columns"></div>
+                        <div class="small-12 meduim-2 large-2 columns"><a href="@Url.Action("VirifyMobile", "Accounts")">@Translate["virify_mobile"]</a></div>
+                    }
+                    else
+                    {
+                        <div class="small-12 meduim-6 large-6 columns"></div>
+                    }
+                }
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Settings", "Accounts")">@Translate["my_account"]</a></div>
+                <div class="small-12 meduim-2 large-2 columns"><a class="link-style" href="@Url.Action("Logout", "Accounts")">@Translate["logout"]</a></div>
+            </div>
+        }
+        <!--End Top Bar-->
+        
+        @RenderBody()
+        @RenderSection("Scripts", false)
+        <script type="text/javascript">
+            $(document).foundation();
+        </script>
+    </body>
+</html>

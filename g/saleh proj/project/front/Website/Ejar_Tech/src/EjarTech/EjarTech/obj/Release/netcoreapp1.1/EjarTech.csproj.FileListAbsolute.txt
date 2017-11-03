@@ -1,0 +1,11 @@
+D:\Projects\EjarTech\src\EjarTech\EjarTech\bin\Release\netcoreapp1.1\EjarTech.deps.json
+D:\Projects\EjarTech\src\EjarTech\EjarTech\bin\Release\netcoreapp1.1\EjarTech.runtimeconfig.json
+D:\Projects\EjarTech\src\EjarTech\EjarTech\bin\Release\netcoreapp1.1\EjarTech.runtimeconfig.dev.json
+D:\Projects\EjarTech\src\EjarTech\EjarTech\bin\Release\netcoreapp1.1\EjarTech.dll
+D:\Projects\EjarTech\src\EjarTech\EjarTech\bin\Release\netcoreapp1.1\EjarTech.pdb
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.csproj.CoreCompileInputs.cache
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.AssemblyInfo.cs
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.dll
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.pdb
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.Properties.Resources.resources
+D:\Projects\EjarTech\src\EjarTech\EjarTech\obj\Release\netcoreapp1.1\EjarTech.csproj.GenerateResource.Cache

@@ -1,0 +1,224 @@
+﻿@inject EjarTech.Services.LanguageServies.Helpers.ITranslationProvider TranslationManager
+@inject EjarTech.Services.AuthServices.Helpers.IUserProvider UserProvider
+@inject Microsoft.Extensions.Options.IOptions<EjarTech.Models.ConfigurationModel.CarsCatalog> Catalog
+@model EjarTech.Models.SearchModels.SearchCarForRent
+@{
+    ViewData["Title"] = "Index";
+    ViewData["page_dir"] = TranslationManager["page_dir"];
+    Layout = "~/Views/Shared/Layout.cshtml";
+    EjarTech.Models.DatabaseModels.User user = await UserProvider.GetUserAsync();
+    List<SelectListItem> TypeItems = new List<SelectListItem>();
+    foreach (string item in Catalog.Value.CarTypes)
+    {
+        TypeItems.Add(new SelectListItem() { Text = TranslationManager[item].ToString(), Value = item });
+    }
+    List<SelectListItem> CompanysNames = new List<SelectListItem>();
+    foreach (string item in Catalog.Value.Companys)
+    {
+        CompanysNames.Add(new SelectListItem() { Text = TranslationManager[item].ToString(), Value = item });
+    }
+    List<SelectListItem> Cities;
+    if (TranslationManager["lang"].ToString() == "ar")
+    {
+        Cities = new List<SelectListItem> { new SelectListItem { Text = "جدة", Value = "جدة" } };
+    }
+    else
+    {
+        Cities = new List<SelectListItem> { new SelectListItem { Text = "Jeddah", Value = "Jeddah" } };
+    }
+    List<SelectListItem> ModelYear = new List<SelectListItem> { new SelectListItem { Text = "2017", Value = "2017" }, new SelectListItem { Text = "2016", Value = "2016" }, new SelectListItem { Text = "2015", Value = "2015" }, new SelectListItem { Text = "2014", Value = "2014" }, };
+}
+
+<!--	nav-->
+
+<header class="subnav-hero-section ">
+    <div class="row">
+        <div class="columns small-12 align-center">
+            <center><img src="~/images/bb.png"></center>
+        </div>
+    </div>
+    <ul class="subnav-hero-subnav dropdown  animated slideInDown" data-dropdown-menu id="primary-menu">
+        <li><a href="home.html" class="is-active">Home</a></li>
+        <li>
+            <a data-toggle="menu" style="">Acount</a>
+        </li>
+        <li><a href="Rental.html">Rent</a></li>
+        <li>
+            <a href="Contact.html">contact</a>
+        </li>
+    </ul>
+</header>
+<ul class="dropdown-pane small ul" id="menu" data-dropdown data-alignment="center">
+    <li class="li"><a href="Sitting.html">Sitting</a></li>
+    <li class="li"><a href="Orders.html">Orders</a></li>
+    <li class="li"><a href="#">Log out</a></li>
+</ul>
+<!--	nav-->
+<!--Text continer-->
+<!--Text continer-->
+<!--Search-->
+<div class="row align-spaced b expanded align-center">
+    <div class="small-12 medium-10 columns  mb mt  ">
+        <div class="row align-center">
+            <h1 style="color: #eab300;">rent and take your car now</h1>
+        </div>
+        <div class="row bg-s-c mt" style="height: 50px"></div>
+        <form asp-action="CarRentSearch" asp-controller="Search" class="row align-spaced bg-s-c ">
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["pick_up_city"]<select asp-for="PickUpPlace" asp-items="Cities"></select></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["pick_up_date"]<input asp-for="PickupDate" /></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["pick_up_time"]<input asp-for="PickupTime" /></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["model_year"]<select asp-for="ModelYear" asp-items="ModelYear"></select></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["company_name"]<select asp-for="CarCompany" asp-items="CompanysNames"></select></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["car_type"]<select asp-for="CarType" asp-items="TypeItems"></select></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["drop_off_date"]<input asp-for="DropOffDate" /></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <label>@TranslationManager["drop_off_time"]<input asp-for="DropTime" /></label>
+            </div>
+            <div class="large-4 meduim-4 small-4 columns">
+                <button type="submit" style="margin-top: 25px;" class="button primary expanded">search</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Search-->
+<!--service-->
+<div class="row align-spaced  bg-r-a ">
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;">Service One</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;">Service Tow</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;">Service Three</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+</div>
+<!--service-->
+<!--About us-->
+<div class="row  bg-r-w  align-justify col-a" s>
+    <div class="columns small-12 large-6" style="padding: 50px">
+        <h3 style="text-align: center">About Us</h3>
+        <div>
+            <p>Some TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome Text</p>
+            <p>Some TextSome TextSome TextSome TextSome Some TextSome TextSome TextSome TextSome Some TextSome TextSome TextSome TextSome TextSome Text</p>
+        </div>
+    </div>
+    <div class="columns small-12  large-4" style="padding: 50px">
+        <img src="http://www.valorglobal.com/wp-content/uploads/2017/08/iStock-603271866_callcenterteam_womanyellow.jpg" height="250px" width="100%;">
+    </div>
+</div>
+<!--About us-->
+<!--New company-->
+<div class="row align-spaced  bg-r-c ">
+    <h1 style="text-align: center" class="columns small-12 col-a">Our New Partners</h1>
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;"> One</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;"> Tow</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+    <div class="columns small-4 medium-4 col-w">
+        <h4 style="text-align: center;">Three</h4>
+        <p class="line bg-r-w"></p>
+        <p style="text-align: center;">some text</p>
+        <p class="line bg-r-w"></p>
+
+    </div>
+</div>
+<!--New company-->
+
+<footer class="row footer shdow expanded g">
+    <div class="columns small-12 medium-4 ">
+        <h4 class="col-a">about us</h4>
+        <p class="line"></p>
+        <p class="row">About usAbout usAbout usAbout usAbout usAbout usAbout usAbout usAbout usAbout usAbout</p>
+    </div>
+    <div class="columns small-12 medium-4 ">
+        <h4 class="col-a">contact info</h4>
+        <p class="line"></p>
+        <div class="row">
+            <div class="columns small-12 ">Phone:+996-999-999-9999</div>
+        </div><div class="row">
+            <div class="columns small-12 ">Email:EjarTech.com</div>
+        </div><div class="row">
+            <div class="columns small-12 ">Location:+996-999-999-9999</div>
+        </div>
+    </div>
+    <div class="columns small-6 medium-2 ">
+        <p class="line" style="margin-top: 40px;"></p>
+        <p><a href="home.html">Home</a></p>
+        <p><a href="Rental.html">Rent</a></p>
+        <p><a href="@Url.Action("Settings", "Accounts")">Acocunt</a></p>
+        <p><a href="Contact.html">Contact</a></p>
+    </div><div class="columns small-6 medium-2 " style="margin-top: 40px;">
+        <p class="line"></p>
+        <p><a href="@Url.Action("Settings", "Accounts")">Sitting</a></p>
+        <p><a href="Orders.html">Orders</a></p>
+        <p><a>Log out</a></p>
+    </div>
+    <p class=" columns small-12  line"></p>
+</footer>
+<!--End Car Section
+<form asp-action="CarRentSearch" asp-controller="Search" class="row" style="margin-right: auto; margin-left: auto;">
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["pick_up_city"]<select asp-for="PickUpPlace" asp-items="Cities"></select></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["pick_up_date"]<input asp-for="PickupDate" /></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["pick_up_time"]<input asp-for="PickupTime" /></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["model_year"]<select asp-for="ModelYear" asp-items="ModelYear"></select></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["company_name"]<select asp-for="CarCompany" asp-items="CompanysNames"></select></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["car_type"]<select asp-for="CarType" asp-items="TypeItems"></select></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["drop_off_date"]<input asp-for="DropOffDate" /></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <label>TranslationManager["drop_off_time"]<input asp-for="DropTime" /></label>
+    </div>
+    <div class="large-4 meduim-4 small-4 columns">
+        <button style="margin-top: 25px;" class="button primary expanded">search</button>
+    </div>
+</form>-->

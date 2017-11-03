@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjarTech", "EjarTech\EjarTech.csproj", "{39ACE6A0-C519-4950-83C7-2E2848CECB4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39ACE6A0-C519-4950-83C7-2E2848CECB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39ACE6A0-C519-4950-83C7-2E2848CECB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39ACE6A0-C519-4950-83C7-2E2848CECB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39ACE6A0-C519-4950-83C7-2E2848CECB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

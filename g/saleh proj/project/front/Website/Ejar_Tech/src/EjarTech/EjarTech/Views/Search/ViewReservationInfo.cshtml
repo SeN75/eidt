@@ -1,0 +1,115 @@
+﻿@model EjarTech.Models.SearchModels.ViewReservationInfo
+@{
+    ViewData["Title"] = "ViewReservationInfo";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<header class="subnav-hero-section ">
+    <div class="row">
+        <div class="columns small-12 align-center">
+            <center><img src="%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82%20%D9%88%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A.png"></center>
+        </div>
+    </div>
+    <ul class="subnav-hero-subnav dropdown  animated slideInDown" data-dropdown-menu id="primary-menu">
+        <li><a href="home.html">Home</a></li>
+        <li>
+            <a data-toggle="menu" style="">Acount</a>
+        </li>
+        <li><a href="Rental.html" class="is-active">Rent</a></li>
+        <li>
+            <a href="Contact.html">contact</a>
+        </li>
+    </ul>
+</header>
+<ul class="dropdown-pane small ul" id="menu" data-dropdown data-alignment="center">
+    <li class="li"><a href="Sitting.html">Sitting</a></li>
+    <li class="li"><a href="Orders.html">Orders</a></li>
+    <li class="li"><a href="#">Log out</a></li>
+</ul>
+<!--	nav-->
+<!--Steps-->
+<div class="row g animated slideInUp" style="margin-top: 20px;">
+    <div class="columns small-12 ">
+        <div class="row bg-r-w">
+            <div class="columns small-4 pcolor">
+                <h5>Search</h5>
+            </div>
+            <div class="columns  pcolor">
+                <h5>Choose</h5>
+            </div>
+            <div class="columns  scolor">
+                <h5>Book</h5>
+            </div>
+
+
+        </div>
+        <div class="row g">
+            <div class="columns small-4 step"></div>
+            <div class="columns step"></div>
+            <div class="columns stepp"></div>
+        </div>
+    </div>
+</div>
+<!--Steps-->
+<br>
+<br>
+<br>
+<!-- Booking info   -->
+<div class="row  g align-spaced fadeInUpBig animated bg-r-w">
+
+    <div class="small-12 medium-6 large-6 columns
+					" style="padding:40px ;">
+        <p class="row">Operation Date - تاريخ العملية:@String.Format("{0:MM/dd/yy}", DateTime.Now) </p>
+        <p class="row">Operation type - نوع العملية:Book a car - حجز سيارة</p>
+        <hr>
+        <p class="row">Received date - تاريخ الحجز: @String.Format("{0:MM/dd/yy}", Model.From)</p>
+        <p class="row">Date of Returns - تاريخ الإرجاع: @String.Format("{0:MM/dd/yy}", Model.To)</p>
+
+        <hr>
+
+        <p class="row">Office Name - اسم المكتب:@Model.Office.BranchName</p>
+        <p class="row">Office location - موقع المكتب: https://www.google.com.sa/maps/@Model.Office.Latitude,@Model.Office.Longitude,15z?hl=ar </p>
+    </div>
+
+
+
+
+    <div class="small-12 medium-5 columns" style="">
+        <div class="row  align-center">
+            <div class="small-12 medium-10 colunms">
+                <img style="" src="http://st.motortrend.com/uploads/sites/10/2016/05/2016-bmw-428-i-convertible-angular-front.png">
+            </div>
+        </div>
+        <div class="row " style="padding-left: 35px;padding-right:35px;">
+            <div class="small-12 columns">
+                <div class="row" style="margin-top: 15px;">
+                    <p class="columns ">Type:@Model.Car.CarType</p>
+                    <p class="columns ">Model:@Model.Car.ModelYear</p>
+                </div>
+                <div class="row">
+                    <p class="columns ">Door: @Model.Car.DoorNumber</p>
+                    <p class="columns ">Seate:@Model.Car.SeatsNumber</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row fadeInUpBig animated g align-center bg-r-a col-w">
+    <div class="columns small-12 medium-7" style="text-align: center;">
+        <hr>
+        <h6 class="row" style="color:white">مبالغ  التامين لاتحسب هنا بل لدى المكتب - Insurance amounts are not counted here but in the office</h6>
+        <h6 class="row" style="color:white">الدفع عند الإستلام - Cash On Delivery</h6>
+        <h4 class="row" style="color:#eab300 ">Total amount of your booking|التكلفة الإجمالية لحجزك</h4>
+        <h2 class="row" style="color:#fefefe">@Model.TotalPrice</h2>
+    </div>
+</div>
+<!--continue button-->
+<div class="row fadeInUpBig animated align-center g" style="margin-top: 30px;">
+    <a class="small-8 medium-6 large-4 columns bg-r-a button expanded" asp-controller="Search" asp-action="ConfirmReservation">
+        <h3>BOOK NOW  -  إحجز الأن</h3>
+    </a>
+</div>
+

@@ -1,0 +1,12 @@
+@model EjarTech.Models.AdminPortalModel.EditCompany
+@{
+    ViewData["Title"] = "EditCompany";
+    Layout = "~/Views/Shared/Dashbord.cshtml";
+}
+
+<form asp-action="EditCompany" method="POST">
+    <input type="hidden" asp-for="_id" />
+    @Html.EditorForModel()
+    <button class="button primary" type="submit">Save</button>
+</form>
+
