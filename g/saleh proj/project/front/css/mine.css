@@ -602,7 +602,7 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.g {
+	.s {
 		display: none;
 	}
 }
@@ -674,9 +674,13 @@ body {
 	text-align: center;
 }
 .line {
+	align-content: center;
 	height: 1px;
 	width: 90%;
 	background-color: #eab300;
+}
+.p-line{
+	width: 70%; height: 1px;background-color: #eab300; margin-left: auto; margin-right: auto;margin-bottom: 5px;
 }
 .navb {
 	background-color: #f1f1f1;
@@ -731,11 +735,12 @@ body {
 }
 .b {
 	min-height: 100%;
-	background-size: cover;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-attachment: fixed;
-	background-image: url(http://xdesktopwallpapers.com/wp-content/uploads/2012/02/Front%20Pose%20Of%20Chevrolet%20Camaro%20in%20Yellow.jpg);
+	background-attachment: ;
+	background-image: url(https://static.pexels.com/photos/6097/man-people-hand-driving-6097.jpg);
+	
 }
 .mt {
 	margin-top: 50px;
@@ -749,19 +754,63 @@ body {
 .ul .li {
 	list-style: none;
 }
-.ul .li a{
-	padding: 0.5rem 0.5rem;
-	font-size: 0.75rem;
+ .ll a{
+	font-size: 14px;
 	color: #1a66a9;
 	text-transform: uppercase;
-	display: block;
 	font-weight: bold;
 	letter-spacing: 1px;
 	transition: all 0.35s ease-in-out;
 }
-.ul .li a:hover {
+ .ll a:hover {
 	background: rgba(230, 230, 230, 0.5);
 	color: #eab300;
 }
 .account .li{list-style: none; margin-bottom: 10px;}
 .account .li h5{color: #eab300;text-align: center;}
+#nav{
+	top: 0; left: 0; right: 0;
+	position: fixed;
+	z-index: 10;
+	background-color: rgba(250,250,250,0.9);
+}
+
+@media screen and (min-width: 20em) {
+	.g {
+		display: none;
+	}
+	#mobile{
+		width: 311px;height: 550px;
+	}
+	.m{display: none;}
+}
+@media screen and (min-width: 63.750em) {
+	.g {
+		display: none;
+		
+	}
+		.m{display: none;}#mobile{
+		width: 311px;height: 550px;
+	}
+}
+@media screen and (min-width: 64em) {
+	.g {
+		display:block;
+		
+	}
+		.m{display:inline-block;}
+}
+.p-{
+	text-align: center;
+}
+.menu-icon::after {
+
+  
+
+    background: #1a66a1;
+
+    box-shadow: 0 7px 0 #1a66a1, 0 14px 0 #1a66a1;
+
+ 
+
+}

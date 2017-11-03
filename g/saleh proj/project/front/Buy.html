@@ -16,6 +16,11 @@
 	</head>
 
 	<body>
+		<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title"data-toggle="offCanvas"data-open="offCanvas">Menu</div>
+</div>
+
         <header class="subnav-hero-section ">
         <h1 class="subnav-hero-headline animated slideInUp">EjarTech <small></small></h1>
         <ul class="subnav-hero-subnav animated slideInDown">
@@ -26,7 +31,12 @@
         </ul>
 
     </header>
-        
+         <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+    <!-- Your menu or Off-canvas content goes here -->
+  </div>
+  <div class="off-canvas-content" data-off-canvas-content>
+    <!-- Your page content lives here -->
+ 
  <div class="row animated slideInUp br-2  tabs2" style="">
         <div class="small-1 medium-1 large-3  columns"></div>
         <div class="small-10 medium-10 large-6 columns br-1 expanded  shdow" style="margin-top:; background-color: white;">
@@ -116,6 +126,7 @@
 		</div>
 			<p class=" columns small-12 medium-12 large-12 line"></p>
 	</footer>
+	   </div>
 	<!--footer-->
 		<script>
 		$(document).foundation();
