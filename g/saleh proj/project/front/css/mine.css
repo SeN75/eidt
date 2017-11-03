@@ -738,7 +738,8 @@ body {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-attachment: ;
+	background-attachment: fixed
+	;
 	background-image: url(https://static.pexels.com/photos/6097/man-people-hand-driving-6097.jpg);
 	
 }
@@ -766,6 +767,7 @@ body {
 	background: rgba(230, 230, 230, 0.5);
 	color: #eab300;
 }
+
 .account .li{list-style: none; margin-bottom: 10px;}
 .account .li h5{color: #eab300;text-align: center;}
 #nav{
