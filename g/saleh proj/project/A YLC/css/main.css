@@ -1,0 +1,208 @@
+.h1p{
+	height: 1px;
+}
+
+
+.background-w {
+	background-color: #fff;  
+}
+.border-radius-10{
+	border-radius:10px;
+}
+.padding-20{
+	padding: 20px;
+}
+.YLC-backgroun-color-1 {
+	background-color:#9f73b2;
+}
+.YLC-backgroun-color-2 {
+	background-color: #eee6f2;
+}
+.YLC-backgroun-color-3{
+	background-color: #aeaeae;
+}
+.YLC-backgroun-color-1-hover:hover{
+	background-color:  #6b408e;
+}
+.center {
+	text-align: center;
+}
+
+.YLC-Color-1 {
+	color: #fff
+}
+.YLC-Color-1:hover {
+	color: #fff
+}
+
+
+.YLC-Color-2 {
+	color: #6d6e71;
+}
+.YLC-Color-3 {
+	color: #6b408e;
+}
+.YLC-Color-3:hover {
+	color: #6b408e;
+}
+
+.MtopA {
+	margin-top: 30%;
+}
+
+.MbottonA {
+	margin-bottom: 30%;
+}
+
+.list-style-non {
+	margin: 3px;
+	color: #6d6e71;
+}
+
+.list-style-non li {
+	margin: 5px;
+}
+.list-style-none{
+	margin-bottom: 0; margin-top: 10px;
+}.list-style-none li{
+	color: white;
+	display: inline-block;
+	margin: 2px;
+}.list-style-none li a{
+	color: white;
+	
+} 
+
+
+.t{
+	
+	background-color: white;
+	padding: 10px;
+	float: right;
+	width: 80px;
+	height: auto;
+	text-align: right;
+	
+	z-index: 1000000;
+}
+.marginrl{
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.marginb{
+	margin-bottom: 10px;
+}
+.width100 {
+	width: 100%;
+}
+
+@media screen and (min-width:20em) {
+	.Logo {
+		height: auto;
+		max-width: 100%;
+		max-height: 50px;
+		margin-top: -4px;
+	}
+	.MediumandSmall-S{
+		display: block;
+	}
+	.MediumandSmall-h{
+		display: none;
+	}
+	.m{
+		display: inline;
+	}
+	.margintop-5{
+margin-top: 0px;
+}
+}
+
+
+@media screen and (min-width:40em) {
+.Logo {
+		height: auto;
+		max-width: 100%;
+		max-height: 80px;
+		margin-top: -5px;
+	}
+	.MediumandSmall-S{
+		display: block;
+	}
+	.m{
+		display: inline;
+	}
+	.MediumandSmall-h{
+		display: none;
+	}
+	.margintop-5{
+margin-top: 12px;
+}
+}
+
+@media screen and (min-width:64em) {
+	.Logo {
+		height: auto;
+		max-width: 100%;
+		max-height: 80px;
+		margin-top: -20px;
+	}
+	.MediumandSmall-S{
+		display: none;
+	}
+	.MediumandSmall-h{
+		display: block;
+	}
+	.m{
+		display: none;
+	}
+	.margintop-5{
+margin-top: 5px;
+}
+}
+
+
+@font-face {
+	font-family: Bukra-light;
+	src: url("29ltbukralight.ttf") ;
+}@font-face {
+	font-family: Bukra;
+	src: url("29ltbukraregular.ttf") ;
+}
+
+* {
+	font-family: Bukra-light;
+}
+h2{
+	font-family: Bukra;
+}h5{
+	font-family: Bukra;
+}h3{
+	font-family: Bukra;
+}
+h1{
+	font-family: Bukra;
+}h4{
+	font-family: Bukra;
+}h6{
+	font-family: Bukra;
+}
+.font-Buker{
+	font-family: Bukra;
+	
+}
+.margin-5p{
+	margin: 13px;
+	list-style: none;
+}
+.margin{
+	margin-right: 2px;
+		margin-left: 2px;
+
+}
+.margin-500{
+	margin-top: -300px;
+	 
+}
+.dropdownmenu-arrow-color{
+	color: #fff;
+}
